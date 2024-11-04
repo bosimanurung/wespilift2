@@ -4,5 +4,5 @@ openpyxl
 pandasql
 matplotlib
 gspread-pandas
-streamlit_gsheets
 gspread-dataframe
+st-gsheets-connection
