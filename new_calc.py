@@ -602,7 +602,7 @@ if st.button("Save"):
             # Insert the data after the last filled row
             worksheet.insert_rows(values, last_filled_row)
 
-                                           new_id_calc, _user_id, _well_name, _field_name, _company, _engineer, _date_calc     
+                                           #new_id_calc, _user_id, _well_name, _field_name, _company, _engineer, _date_calc     
         # Your DataFrame with data to be inserted
         df = pd.DataFrame(results, columns=['id_calc', '_user_id', '_well_name', 'field_name', '_company', '_engineer', 'date_calc'])
 
