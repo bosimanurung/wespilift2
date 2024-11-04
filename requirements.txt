@@ -3,5 +3,6 @@ pandas
 openpyxl
 pandasql
 matplotlib
-gspread
+gspread-pandas
 streamlit_gsheets
+gspread-dataframe
