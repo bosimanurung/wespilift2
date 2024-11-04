@@ -3,4 +3,5 @@ pandas
 openpyxl
 pandasql
 matplotlib
-streamlit-aggrid
+gspread
+streamlit_gsheets
