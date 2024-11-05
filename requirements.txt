@@ -3,6 +3,3 @@ pandas
 openpyxl
 pandasql
 matplotlib
-gspread-pandas
-gspread-dataframe
-st-gsheets-connection
