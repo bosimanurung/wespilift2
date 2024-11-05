@@ -574,40 +574,61 @@ if st.button("Save"):
             writer_object.writerows(new_records)                    
             f_object.close() 
 
+       # ------------- to update table in google sheets but still error in credential ---------------------------
+        # to connect key & variables values in dictionary
+        #https://discuss.python.org/t/is-there-a-way-to-convert-a-variable-name-this-to-this/35303/2
+        #In [1]: a, b, c, e = 10, 20, 30, 50
+
+        #In [2]: keys = ("a", "b", "c", "e")
+
+        #In [3]: d = { k: globals().get(k) for k in keys }
+
+        #In [4]: d
+        #Out[4]: {'a': 10, 'b': 20, 'c': 30, 'e': 50}
+
+        # ---------- error here in credential -----------------------------------
         # Create a connection object.
-        credentials = service_account.Credentials.from_service_account_info(
-            st.secrets["gcp_service_account"],
-            scopes=[
-                "https://www.googleapis.com/auth/spreadsheets",
-            ],
-        )
-        gc = gspread.authorize(credentials)
+        #conn = st.connection("gsheets", type=GSheetsConnection)
+        #df = conn.read()
+
+        # Create a connection object.
+        #credentials = service_account.Credentials.from_service_account_info(
+        #    st.secrets["gcp_service_account"],
+        #    scopes=[
+        #        "https://www.googleapis.com/auth/spreadsheets",
+        #        wespi-711@fifth-bonbon-440712-g9.iam.gserviceaccount.com
+        #    ],
+        #)
+        # --------------- until here is the error problem -------------------------------
+
+        # -------------- remark them all first, we'll continue it later --------------------------------
+        #gc = gspread.authorize(credentials)
 
         # Get the Google Sheet by URL.
-        sheet_url = st.secrets["private_gsheets_url"]
-        sheet = gc.open_by_url(sheet_url)
+        #sheet_url = st.secrets["private_gsheets_url"]
+        #sheet = gc.open_by_url(sheet_url)
 
         # Function to find the last filled row in the worksheet.
-        def find_last_filled_row(worksheet):
-            return len(worksheet.get_all_values()) + 1
+        #def find_last_filled_row(worksheet):
+        #    return len(worksheet.get_all_values()) + 1
 
         # Function to insert data into the Google Sheet after the last filled row.
-        def insert_data_into_sheet(dataframe):
-            worksheet = sheet.get_worksheet(0)  # Replace 0 with the index of your desired worksheet
-            values = dataframe.values.tolist()
+        #def insert_data_into_sheet(dataframe):
+        #    worksheet = sheet.get_worksheet(0)  # Replace 0 with the index of your desired worksheet
+        #    values = dataframe.values.tolist()
 
             # Find the last filled row
-            last_filled_row = find_last_filled_row(worksheet)
+        #    last_filled_row = find_last_filled_row(worksheet)
 
             # Insert the data after the last filled row
-            worksheet.insert_rows(values, last_filled_row)
+        #    worksheet.insert_rows(values, last_filled_row)
 
                                            #new_id_calc, _user_id, _well_name, _field_name, _company, _engineer, _date_calc     
         # Your DataFrame with data to be inserted
-        df = pd.DataFrame(results, columns=['id_calc', '_user_id', '_well_name', 'field_name', '_company', '_engineer', 'date_calc'])
+        #df = pd.DataFrame(results, columns=['id_calc', '_user_id', '_well_name', 'field_name', '_company', '_engineer', 'date_calc'])
 
         # Call the function to insert data into the Google Sheet
-        insert_data_into_sheet(df)
+        #insert_data_into_sheet(df)
                
         if st.button("Confirm"):      
             st.write('')            
