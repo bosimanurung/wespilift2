@@ -14,17 +14,17 @@ from streamlit_gsheets import GSheetsConnection
 #insert_data_into_sheet(df)
 
 #open datas
-mnomor1-url = https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo
-tmycalc-url = https://docs.google.com/spreadsheets/d/1G1JfxkgHr2F_-1igIzAsNQe-kO9IvQ8SPZLSOjgUpcE
-muserlogin-url = https://docs.google.com/spreadsheets/d/19d_mDHySV7j3kYM_dTZb6nBagMY0TEFlQ833vIfRa1E
-minstrument-url = https://docs.google.com/spreadsheets/d/1nJu0PvZ4fyLshLcj-R748mgzlMM9IHjV28FbaSnHMKk
-mcalcmethod-url = https://docs.google.com/spreadsheets/d/1afY5AZuqx8re0vlgMfLDBqwHJcG41Sxg9x-d-HiERfY
-mwelltype-url = https://docs.google.com/spreadsheets/d/1kV0fO8LIPJEGTlQAxlprH1AWDWYZf-LWaZKWztMDyKI
-mmeasurement-url = https://docs.google.com/spreadsheets/d/1gsQLh87psgj3x2UcLIAzxfSqNnr_dmYt48u2F8HGsnw
-mcasingsize-url = https://docs.google.com/spreadsheets/d/1tcel-Do505_YxZOonwFr4ylpSHlmziB1xN9wWxjgUCo
-mtubingsize-url = https://docs.google.com/spreadsheets/d/19fg8MDz83hKSc-YaX2qYQ-e2OGQRg_XBK0tD46FQGFo
-mtubingid-url = https://docs.google.com/spreadsheets/d/1AVWvxiGxZi3hW3WsxTzWI_Xq42612M5RB49VQ_pMWPU
-mtubingcoeff-url = https://docs.google.com/spreadsheets/d/12YD09rDt0Xb4xBUaECdQLQB-QXi9H4VDuEC7sO9Mzlo
+mnomor1-url = "https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo"
+tmycalc-url = "https://docs.google.com/spreadsheets/d/1G1JfxkgHr2F_-1igIzAsNQe-kO9IvQ8SPZLSOjgUpcE"
+muserlogin-url = "https://docs.google.com/spreadsheets/d/19d_mDHySV7j3kYM_dTZb6nBagMY0TEFlQ833vIfRa1E"
+minstrument-url = "https://docs.google.com/spreadsheets/d/1nJu0PvZ4fyLshLcj-R748mgzlMM9IHjV28FbaSnHMKk"
+mcalcmethod-url = "https://docs.google.com/spreadsheets/d/1afY5AZuqx8re0vlgMfLDBqwHJcG41Sxg9x-d-HiERfY"
+mwelltype-url = "https://docs.google.com/spreadsheets/d/1kV0fO8LIPJEGTlQAxlprH1AWDWYZf-LWaZKWztMDyKI"
+mmeasurement-url = "https://docs.google.com/spreadsheets/d/1gsQLh87psgj3x2UcLIAzxfSqNnr_dmYt48u2F8HGsnw"
+mcasingsize-url = "https://docs.google.com/spreadsheets/d/1tcel-Do505_YxZOonwFr4ylpSHlmziB1xN9wWxjgUCo"
+mtubingsize-url = "https://docs.google.com/spreadsheets/d/19fg8MDz83hKSc-YaX2qYQ-e2OGQRg_XBK0tD46FQGFo"
+mtubingid-url = "https://docs.google.com/spreadsheets/d/1AVWvxiGxZi3hW3WsxTzWI_Xq42612M5RB49VQ_pMWPU"
+mtubingcoeff-url = "https://docs.google.com/spreadsheets/d/12YD09rDt0Xb4xBUaECdQLQB-QXi9H4VDuEC7sO9Mzlo"
 
 bsconnect = st.connection("gsheets", type=GSheetsConnection)
 mnomor1 = bsconnect.read(spreadsheet=mnomor1-url)
