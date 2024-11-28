@@ -672,7 +672,8 @@ if st.button("Save"):
 
         update_tmycalc = pd.concat([tmycalc, new_rec], ignore_index=True)
 
-        bsconnect.update(spreadsheet=tmycalc, data=update_tmycalc)
+        #bsconnect.update(spreadsheet=tmycalc, data=update_tmycalc)
+        bsconnect.update(data=update_tmycalc)
         
         if st.button("Next"):      
             st.write('')            
