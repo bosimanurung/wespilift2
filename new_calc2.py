@@ -686,13 +686,12 @@ def edit_and_add():
                 'bottom_liner_at_tvd': _bottom_liner_at_tvd, 'bottom_liner_at_md': _bottom_liner_at_md})                    
 
             #mtubingcoeff = bsconnect.read(spreadsheet=mtubingcoeff-url)
-            bsconnect.update(spreadsheet=tmycalc-url)
+            bsconnect.update(spreadsheet=tmycalcurl)
 
             if st.button("Next"):      
                 wellnamesearch=''
                 return(wellnamesearch)
     
-        #elif _id_instrument==1 and _id_calc_method==1: #Downhole Sensor & Straight Line
         elif _id_calc_method==1: # Straight Line
             #Hitung2an Calculation sblm IPR Curve        
             # Vt=Vo+Vg+Vw; Vo=(1-WC)*Qdes*Bo; Vg=Bg * Free Gas (FG); Vw=WC * Qdes
@@ -1035,7 +1034,7 @@ def edit_and_add():
                 'id_tubing_coeff': _id_tubing_coeff, 'liner_id': _liner_id, 'top_liner_at_tvd': _top_liner_at_tvd, 'top_liner_at_md': _top_liner_at_md, \
                 'bottom_liner_at_tvd': _bottom_liner_at_tvd, 'bottom_liner_at_md': _bottom_liner_at_md})
 
-            bsconnect.update(spreadsheet=tmycalc-url)
+            bsconnect.update(spreadsheet=tmycalcurl)
 
             if st.button("Next"):
                 wellnamesearch=''
@@ -1446,13 +1445,12 @@ def edit_and_add():
                 writer_object.writerows(new_records)                    
                 f_object.close() 
 
-            bsconnect.update(spreadsheet=tmycalc-url)
+            bsconnect.update(spreadsheet=tmycalcurl)
 
             if st.button("Next"):      
                 wellnamesearch=''
                 return(wellnamesearch)
     
-        #elif _id_instrument==1 and _id_calc_method==1: #Downhole Sensor & Straight Line
         elif _id_calc_method==1: # Straight Line
             #Hitung2an Calculation sblm IPR Curve        
             # Vt=Vo+Vg+Vw; Vo=(1-WC)*Qdes*Bo; Vg=Bg * Free Gas (FG); Vw=WC * Qdes
@@ -1778,7 +1776,7 @@ def edit_and_add():
                 writer_object.writerows(new_records)                    
                 f_object.close() 
 
-            bsconnect.update(spreadsheet=tmycalc-url)
+            bsconnect.update(spreadsheet=tmycalcurl)
             
             if st.button("Next"):
                 wellnamesearch=''
