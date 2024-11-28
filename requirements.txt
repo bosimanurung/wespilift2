@@ -3,4 +3,4 @@ pandas
 openpyxl
 pandasql
 matplotlib
-streamlit_gsheets
+st-gsheets-connection
