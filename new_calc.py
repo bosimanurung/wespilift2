@@ -658,8 +658,22 @@ if st.button("Save"):
             writer_object.writerows(new_records)                    
             f_object.close() 
 
-        bsconnect.update(spreadsheet=tmycalcurl)
-               
+        new_rec = pd.DataFrame(
+            [{"id_calc": st.session_state["new_id_calc"], "user_id": _user_id, "well_name": _well_name, "field_name": _field_name, \
+            "company": _company, "engineer": _engineer, "date_calc": _date_calc, "id_instrument": _id_instrument, \
+            "id_calc_method": _id_calc_method, "id_welltype": _id_welltype, "id_measurement": _id_measurement, "comment_or_info": _comment_or_info, \
+            "top_per_tvd": _top_perfo_tvd, "top_per_md": _top_perfo_md, "bottom_per_tvd": _bottom_perfo_tvd, "bottom_per_md": _bottom_perfo_md, \
+            "q_test": _qtest, "sfl": _sfl, "smg": _smgFreeGasAtQtest, "sbhp": _sbhp, "fbhp": _fbhp, "producing_gor": _producing_gor, \
+            "wc": _wc, "bht": _bht, "sgw": _sgw, "sgg": _sgg, "qdes": _qdes, "psd": _psd, "whp": _whp, "psd_md": _psd_md, "p_casing": _p_casing, \
+            "pb": _pb, "api": st.session_state.lbs, "sgo": st.session_state.kg, "id_casing_size": _id_casing_size, "id_tubing_size": _id_tubing_size, \
+            "id_tubing_id": _id_tubing_id, "id_tubing_coeff": st.session_state._id_tubing_coeff, "liner_id": _liner_id, "top_liner_at_tvd": _top_liner_at_tvd, \
+            "top_liner_at_md": _top_liner_at_md, "bottom_liner_at_tvd": _bottom_liner_at_tvd, "bottom_liner_at_md": _bottom_liner_at_md}]
+        )   
+
+        update_tmycalc = pd.concat([tmycalc, new_rec], ignore_index=True)
+
+        bsconnect.update(spreadsheet=tmycalc, data=update_tmycalc)
+        
         if st.button("Next"):      
             st.write('')            
             #st.session_state["api"] = 0.00; st.session_state.sgo = 0.00    
