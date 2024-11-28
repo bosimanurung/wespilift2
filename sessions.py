@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
 import datetime as dt
+from streamlit_gsheets import GSheetsConnection
 
-mnomor1 = pd.read_csv('MNomor1.csv')
+mnomor1url = "https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo"
+bsconnect = st.connection("gsheets", type=GSheetsConnection)
+mnomor1 = bsconnect.read(spreadsheet=mnomor1url)
+
 last_id_calc = mnomor1['tmycalc'].values[0]
 
 def sessionstates():
