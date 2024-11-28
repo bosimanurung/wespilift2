@@ -515,7 +515,8 @@ if st.button("Save"):
         with col1:
            st.write("Pwf@Qdes: ", round(_Pwf_at_Qdes,3), 'psi')
            st.write('Qdes         : ', _qdes, 'BPD')
-           st.write('Composite SG : ', round(_composite_sg,2)) #, '(selisih/beda 0.0003 lbh kecil)')
+           #st.write('Composite SG : ', round(_composite_sg,2)) #, '(selisih/beda 0.0003 lbh kecil)')
+           st.write('Composite SG : ', _composite_sg) 
            #st.write('Di file xls: 0.490859')
            #st.write('\n')
         
