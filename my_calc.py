@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import datetime as dt
 from csv import writer
 from streamlit_gsheets import GSheetsConnection
-import sessions
+from sessions import sessionstates
 
 #open datas
 mnomor1url = "https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo"
