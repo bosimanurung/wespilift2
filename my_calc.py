@@ -4,19 +4,33 @@ import pandasql as ps
 import matplotlib.pyplot as plt
 import datetime as dt
 from csv import writer
+from streamlit_gsheets import GSheetsConnection
 
 #open datas
-mnomor1 = pd.read_csv('MNomor1.csv')
-tmycalc = pd.read_csv('tmycalc.csv')
-muserlogin = pd.read_csv('MUserLogin.csv')
-minstrument = pd.read_csv('MInstrument.csv')
-mcalcmethod = pd.read_csv('MCalcMethod.csv')
-mwelltype = pd.read_csv('MWellType.csv')
-mmeasurement = pd.read_csv('MMeasurement.csv')
-mcasingsize = pd.read_csv('MCasingSize.csv')
-mtubingsize = pd.read_csv('MTubingSize.csv')
-mtubingid = pd.read_csv('MTubingID.csv')
-mtubingcoeff = pd.read_csv('MTubingCoeff.csv')
+mnomor1-url = https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo
+tmycalc-url = https://docs.google.com/spreadsheets/d/1G1JfxkgHr2F_-1igIzAsNQe-kO9IvQ8SPZLSOjgUpcE
+muserlogin-url = https://docs.google.com/spreadsheets/d/19d_mDHySV7j3kYM_dTZb6nBagMY0TEFlQ833vIfRa1E
+minstrument-url = https://docs.google.com/spreadsheets/d/1nJu0PvZ4fyLshLcj-R748mgzlMM9IHjV28FbaSnHMKk
+mcalcmethod-url = https://docs.google.com/spreadsheets/d/1afY5AZuqx8re0vlgMfLDBqwHJcG41Sxg9x-d-HiERfY
+mwelltype-url = https://docs.google.com/spreadsheets/d/1kV0fO8LIPJEGTlQAxlprH1AWDWYZf-LWaZKWztMDyKI
+mmeasurement-url = https://docs.google.com/spreadsheets/d/1gsQLh87psgj3x2UcLIAzxfSqNnr_dmYt48u2F8HGsnw
+mcasingsize-url = https://docs.google.com/spreadsheets/d/1tcel-Do505_YxZOonwFr4ylpSHlmziB1xN9wWxjgUCo
+mtubingsize-url = https://docs.google.com/spreadsheets/d/19fg8MDz83hKSc-YaX2qYQ-e2OGQRg_XBK0tD46FQGFo
+mtubingid-url = https://docs.google.com/spreadsheets/d/1AVWvxiGxZi3hW3WsxTzWI_Xq42612M5RB49VQ_pMWPU
+mtubingcoeff-url = https://docs.google.com/spreadsheets/d/12YD09rDt0Xb4xBUaECdQLQB-QXi9H4VDuEC7sO9Mzlo
+
+bsconnect = st.connection("gsheets", type=GSheetsConnection)
+mnomor1 = bsconnect.read(spreadsheet=mnomor1-url)
+tmycalc = bsconnect.read(spreadsheet=tmycalc-url)
+muserlogin = bsconnect.read(spreadsheet=muserlogin-url)
+minstrument = bsconnect.read(spreadsheet=minstrument-url)
+mcalcmethod = bsconnect.read(spreadsheet=mcalcmethod-url)
+mwelltype = bsconnect.read(spreadsheet=mwelltype-url)
+mmeasurement = bsconnect.read(spreadsheet=mmeasurement-url)
+mcasingsize = bsconnect.read(spreadsheet=mcasingsize-url)
+mtubingsize = bsconnect.read(spreadsheet=mtubingsize-url)
+mtubingid = bsconnect.read(spreadsheet=mtubingid-url)
+mtubingcoeff = bsconnect.read(spreadsheet=mtubingcoeff-url)
 df_ipr_data = pd.DataFrame(columns=['Flow rate', 'Pressure'])
 
 # global variables
