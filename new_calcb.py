@@ -334,7 +334,7 @@ def new_calc_straight(): # from new_calc.py (in there, is counting Vogel)
         writer_object.writerows(new_records)                    
         f_object.close() 
 
-    bsconnect.update(spreadsheet=tmycalc-url)
+    bsconnect.update(spreadsheet=tmycalcurl)
             
     if st.button("Next"):      
         st.write('')
