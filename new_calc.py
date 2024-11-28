@@ -14,30 +14,30 @@ from streamlit_gsheets import GSheetsConnection
 #insert_data_into_sheet(df)
 
 #open datas
-mnomor1-url = "https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo"
-tmycalc-url = "https://docs.google.com/spreadsheets/d/1G1JfxkgHr2F_-1igIzAsNQe-kO9IvQ8SPZLSOjgUpcE"
-muserlogin-url = "https://docs.google.com/spreadsheets/d/19d_mDHySV7j3kYM_dTZb6nBagMY0TEFlQ833vIfRa1E"
-minstrument-url = "https://docs.google.com/spreadsheets/d/1nJu0PvZ4fyLshLcj-R748mgzlMM9IHjV28FbaSnHMKk"
-mcalcmethod-url = "https://docs.google.com/spreadsheets/d/1afY5AZuqx8re0vlgMfLDBqwHJcG41Sxg9x-d-HiERfY"
-mwelltype-url = "https://docs.google.com/spreadsheets/d/1kV0fO8LIPJEGTlQAxlprH1AWDWYZf-LWaZKWztMDyKI"
-mmeasurement-url = "https://docs.google.com/spreadsheets/d/1gsQLh87psgj3x2UcLIAzxfSqNnr_dmYt48u2F8HGsnw"
-mcasingsize-url = "https://docs.google.com/spreadsheets/d/1tcel-Do505_YxZOonwFr4ylpSHlmziB1xN9wWxjgUCo"
-mtubingsize-url = "https://docs.google.com/spreadsheets/d/19fg8MDz83hKSc-YaX2qYQ-e2OGQRg_XBK0tD46FQGFo"
-mtubingid-url = "https://docs.google.com/spreadsheets/d/1AVWvxiGxZi3hW3WsxTzWI_Xq42612M5RB49VQ_pMWPU"
-mtubingcoeff-url = "https://docs.google.com/spreadsheets/d/12YD09rDt0Xb4xBUaECdQLQB-QXi9H4VDuEC7sO9Mzlo"
+mnomor1url = "https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo"
+tmycalcurl = "https://docs.google.com/spreadsheets/d/1G1JfxkgHr2F_-1igIzAsNQe-kO9IvQ8SPZLSOjgUpcE"
+muserloginurl = "https://docs.google.com/spreadsheets/d/19d_mDHySV7j3kYM_dTZb6nBagMY0TEFlQ833vIfRa1E"
+minstrumenturl = "https://docs.google.com/spreadsheets/d/1nJu0PvZ4fyLshLcj-R748mgzlMM9IHjV28FbaSnHMKk"
+mcalcmethodurl = "https://docs.google.com/spreadsheets/d/1afY5AZuqx8re0vlgMfLDBqwHJcG41Sxg9x-d-HiERfY"
+mwelltypeurl = "https://docs.google.com/spreadsheets/d/1kV0fO8LIPJEGTlQAxlprH1AWDWYZf-LWaZKWztMDyKI"
+mmeasurementurl = "https://docs.google.com/spreadsheets/d/1gsQLh87psgj3x2UcLIAzxfSqNnr_dmYt48u2F8HGsnw"
+mcasingsizeurl = "https://docs.google.com/spreadsheets/d/1tcel-Do505_YxZOonwFr4ylpSHlmziB1xN9wWxjgUCo"
+mtubingsizeurl = "https://docs.google.com/spreadsheets/d/19fg8MDz83hKSc-YaX2qYQ-e2OGQRg_XBK0tD46FQGFo"
+mtubingidurl = "https://docs.google.com/spreadsheets/d/1AVWvxiGxZi3hW3WsxTzWI_Xq42612M5RB49VQ_pMWPU"
+mtubingcoeffurl = "https://docs.google.com/spreadsheets/d/12YD09rDt0Xb4xBUaECdQLQB-QXi9H4VDuEC7sO9Mzlo"
 
 bsconnect = st.connection("gsheets", type=GSheetsConnection)
-mnomor1 = bsconnect.read(spreadsheet=mnomor1-url)
-tmycalc = bsconnect.read(spreadsheet=tmycalc-url)
-muserlogin = bsconnect.read(spreadsheet=muserlogin-url)
-minstrument = bsconnect.read(spreadsheet=minstrument-url)
-mcalcmethod = bsconnect.read(spreadsheet=mcalcmethod-url)
-mwelltype = bsconnect.read(spreadsheet=mwelltype-url)
-mmeasurement = bsconnect.read(spreadsheet=mmeasurement-url)
-mcasingsize = bsconnect.read(spreadsheet=mcasingsize-url)
-mtubingsize = bsconnect.read(spreadsheet=mtubingsize-url)
-mtubingid = bsconnect.read(spreadsheet=mtubingid-url)
-mtubingcoeff = bsconnect.read(spreadsheet=mtubingcoeff-url)
+mnomor1 = bsconnect.read(spreadsheet=mnomor1url)
+tmycalc = bsconnect.read(spreadsheet=tmycalcurl)
+muserlogin = bsconnect.read(spreadsheet=muserloginurl)
+minstrument = bsconnect.read(spreadsheet=minstrumenturl)
+mcalcmethod = bsconnect.read(spreadsheet=mcalcmethodurl)
+mwelltype = bsconnect.read(spreadsheet=mwelltypeurl)
+mmeasurement = bsconnect.read(spreadsheet=mmeasurementurl)
+mcasingsize = bsconnect.read(spreadsheet=mcasingsizeurl)
+mtubingsize = bsconnect.read(spreadsheet=mtubingsizeurl)
+mtubingid = bsconnect.read(spreadsheet=mtubingidurl)
+mtubingcoeff = bsconnect.read(spreadsheet=mtubingcoeffurl)
 df_temp = pd.DataFrame()
 
 st.title("Add New Calculation")
