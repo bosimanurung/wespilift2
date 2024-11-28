@@ -569,7 +569,8 @@ if st.button("Save"):
         with col2:
            st.write('P. Casing    : ', _p_casing_hitung, _measurement, 'TVD')
            st.write('Friction Loss: ', round(_friction_loss,3), _measurement, 'TVD')
-           st.write('% Free Gas     : ', round(_persen_free_gas,3), '%')
+           #st.write('% Free Gas     : ', round(_persen_free_gas,3), '%')
+           st.write('% Free Gas     : ', _persen_free_gas, '%')
            #st.write('Di file xls: 51.80 %')
            #st.write('Hitung2an % Free Gas:')
            #st.write('Free Gas = (Vg / Vt) * 100')
