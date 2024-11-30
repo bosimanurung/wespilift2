@@ -8,15 +8,6 @@ import gspread
 from streamlit_gsheets import GSheetsConnection
 from sessions import sessionstates
 from new_calcb import new_calc_straight
-<<<<<<< HEAD
-=======
-
-# Your DataFrame with data to be inserted
-#df = pd.DataFrame(results, columns=['query', 'batch_index', 'index_of_audio_output_tensor', 'audio_file_name', 'similarity_score_by_model', 'user_relevance_score'])
-
-# Call the function to insert data into the Google Sheet
-#insert_data_into_sheet(df)
->>>>>>> 730bb112f5cba03a7617941de511b2c786989388
 
 #open datas
 mnomor1url = "https://docs.google.com/spreadsheets/d/1aENaYtR7LKGYMod5Y7MjP55uu8r2cOsMvCWrFKTWgBo"
@@ -650,72 +641,11 @@ if st.button("Save"):
         #    writer_object.writerows(new_records)                    
         #    f_object.close() 
 
-<<<<<<< HEAD
-        def update_dataframe(tmycalc, newRec):
-            # Find the first empty index
-            empty_indices = tmycalc.index[tmycalc.isnull().all(axis=1)].tolist()
-
-            if empty_indices:
-                # Use the first empty index
-                first_empty_index = empty_indices[0]
-                tmycalc.loc[first_empty_index] = newRec.iloc[0]
-            else:
-                # If there are no empty indices, append the new data to the end
-                tmycalc = tmycalc.append(newRec, ignore_index=True)
-            return tmycalc
-
-=======
->>>>>>> 730bb112f5cba03a7617941de511b2c786989388
         new_rec = pd.DataFrame(
             [{"id_calc": st.session_state["new_id_calc"], "user_id": _user_id, "well_name": _well_name, "field_name": _field_name, \
             "company": _company, "engineer": _engineer, "date_calc": _date_calc, "id_instrument": _id_instrument, \
             "id_calc_method": _id_calc_method, "id_welltype": _id_welltype, "id_measurement": _id_measurement, "comment_or_info": _comment_or_info, \
-<<<<<<< HEAD
-            "top_perfo_tvd": _top_perfo_tvd, "top_perfo_md": _top_perfo_md, "bottom_perfo_tvd": _bottom_perfo_tvd, "bottom_perfo_md": _bottom_perfo_md, \
-            "qtest": _qtest, "sfl": _sfl, "smg": _smgFreeGasAtQtest, "sbhp": _sbhp, "fbhp": _fbhp, "producing_gor": _producing_gor, \
-            "wc": _wc, "bht": _bht, "sgw": _sgw, "sgg": _sgg, "qdes": _qdes, "psd": _psd, "whp": _whp, "psd_md": _psd_md, "p_casing": _p_casing, \
-            "pb": _pb, "api": st.session_state.lbs, "sgo": st.session_state.kg, "id_casing_size": _id_casing_size, "id_tubing_size": _id_tubing_size, \
-            "id_tubing_id": _id_tubing_id, "id_tubing_coeff": st.session_state._id_tubing_coeff, "liner_id": _liner_id, "top_liner_at_tvd": _top_liner_at_tvd, \
-            "top_liner_at_md": _top_liner_at_md, "bottom_liner_at_tvd": _bottom_liner_at_tvd, "bottom_liner_at_md": _bottom_liner_at_md,}]
-        )   
 
-        newRecord = [[st.session_state["new_id_calc"], _user_id, _well_name, _field_name, _company, _engineer, _date_calc, \
-                  _id_instrument, _id_calc_method, _id_welltype, _id_measurement, _comment_or_info, \
-                  _top_perfo_tvd, _top_perfo_md, _bottom_perfo_tvd, _bottom_perfo_md, _qtest, _sfl, _smgFreeGasAtQtest, _sbhp, _fbhp, \
-                  _producing_gor, _wc, _bht, _sgw, _sgg, _qdes, _psd, _whp, _psd_md, _p_casing, _pb, \
-                  st.session_state.lbs, st.session_state.kg, _id_casing_size, _id_tubing_size, _id_tubing_id, \
-                  st.session_state._id_tubing_coeff, _liner_id, _top_liner_at_tvd, _top_liner_at_md, \
-                  _bottom_liner_at_tvd, _bottom_liner_at_md]]   
-
-        st.write('Before update tmycalc:')
-        st.dataframe(tmycalc)
-        # Update the dataframe and the spreadsheet
-        #updated_tmycalc = update_dataframe(tmycalc, newRecord)
-        #bsconnect.update(data=updated_tmycalc)
-
-        update_tmycalc = pd.concat([tmycalc, new_rec], ignore_index=True)
-        #st.dataframe(update_tmycalc)
-        st.write('After updated:')
-        st.dataframe(update_tmycalc)
-
-        #bsconnect.update(spreadsheet=tmycalc, data=update_tmycalc)
-        bsconnect.update(spreadsheet=tmycalcurl, worksheet="mycalc", data=update_tmycalc)
-               
-=======
-            "top_per_tvd": _top_perfo_tvd, "top_per_md": _top_perfo_md, "bottom_per_tvd": _bottom_perfo_tvd, "bottom_per_md": _bottom_perfo_md, \
-            "q_test": _qtest, "sfl": _sfl, "smg": _smgFreeGasAtQtest, "sbhp": _sbhp, "fbhp": _fbhp, "producing_gor": _producing_gor, \
-            "wc": _wc, "bht": _bht, "sgw": _sgw, "sgg": _sgg, "qdes": _qdes, "psd": _psd, "whp": _whp, "psd_md": _psd_md, "p_casing": _p_casing, \
-            "pb": _pb, "api": st.session_state.lbs, "sgo": st.session_state.kg, "id_casing_size": _id_casing_size, "id_tubing_size": _id_tubing_size, \
-            "id_tubing_id": _id_tubing_id, "id_tubing_coeff": st.session_state._id_tubing_coeff, "liner_id": _liner_id, "top_liner_at_tvd": _top_liner_at_tvd, \
-            "top_liner_at_md": _top_liner_at_md, "bottom_liner_at_tvd": _bottom_liner_at_tvd, "bottom_liner_at_md": _bottom_liner_at_md}]
-        )   
-
-        update_tmycalc = pd.concat([tmycalc, new_rec], ignore_index=True)
-
-        #bsconnect.update(spreadsheet=tmycalc, data=update_tmycalc)
-        bsconnect.update(data=update_tmycalc)
-        
->>>>>>> 730bb112f5cba03a7617941de511b2c786989388
         if st.button("Next"):      
             st.write('')            
             #st.session_state["api"] = 0.00; st.session_state.sgo = 0.00    
@@ -729,8 +659,4 @@ if st.button("Save"):
 
     elif _id_calc_method==1: # Straight Line
         new_calc_straight() # new_calcb.py
-<<<<<<< HEAD
-        st.write('')
-=======
-        st.write('')
->>>>>>> 730bb112f5cba03a7617941de511b2c786989388
+
